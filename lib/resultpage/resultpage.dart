@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:some_app/resultpage/valuebox.dart';
+import 'package:some_app/widgets/valuebox.dart';
 
 class ResultPage extends StatefulWidget {
   //variable for storing the friends value

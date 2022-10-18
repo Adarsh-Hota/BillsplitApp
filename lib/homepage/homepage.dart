@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:some_app/homepage/total_box.dart';
-import 'package:some_app/homepage/slider_box.dart';
-import 'package:some_app/homepage/tip_box.dart';
-import 'package:some_app/homepage/tax_box.dart';
-import 'package:some_app/homepage/keyboard_pad.dart';
+import 'package:some_app/widgets/total_box.dart';
+import 'package:some_app/widgets/slider_box.dart';
+import 'package:some_app/widgets/tip_box.dart';
+import 'package:some_app/widgets/tax_box.dart';
+import 'package:some_app/widgets/keyboard_pad.dart';
 import 'package:some_app/resultpage/resultpage.dart';
 
 class BillSplit extends StatefulWidget {
