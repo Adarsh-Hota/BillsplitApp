@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
 import 'package:some_app/widgets/valuebox.dart';
 
 class ResultPage extends StatefulWidget {
@@ -58,38 +59,39 @@ class _ResultPageState extends State<ResultPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('Result'),
-          centerTitle: true,
-          automaticallyImplyLeading: false,
+      appBar: AppBar(
+        title: const Text('Result'),
+        centerTitle: true,
+        automaticallyImplyLeading: false,
+      ),
+      body: Container(
+        margin: const EdgeInsets.only(left: 20, right: 20),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Text(
+              "Everyone should pay \$$finalAmount",
+              style: fontStyle(size: 22, color: Colors.black),
+            ),
+            ValueBox(
+                friends: widget.friends,
+                tax: widget.tax,
+                tip: widget.tip,
+                finalAmount: finalAmount),
+            const SizedBox(
+              height: 10,
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: const Text('Calculate Again ?'))
+          ],
         ),
-        body: Container(
-          margin: const EdgeInsets.only(left: 20, right: 20),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Text(
-                "Everyone should pay \$$finalAmount",
-                style: fontStyle(size: 22, color: Colors.black),
-              ),
-              ValueBox(
-                  friends: widget.friends,
-                  tax: widget.tax,
-                  tip: widget.tip,
-                  finalAmount: finalAmount),
-              const SizedBox(
-                height: 10,
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              ElevatedButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  child: const Text('Calculate Again ?'))
-            ],
-          ),
-        ));
+      ),
+    );
   }
 }

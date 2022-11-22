@@ -24,15 +24,16 @@ class SliderBox extends StatelessWidget {
                 color: Colors.black,
                 fontWeight: FontWeight.w700)),
         Slider(
-            min: 0,
-            max: 15,
-            divisions: 15,
-            value: friendsValue,
-            activeColor: Colors.orange,
-            inactiveColor: Colors.grey,
-            onChanged: (value) {
-              setSliderValue(value);
-              }) 
+          min: 0,
+          max: 15,
+          divisions: 15,
+          value: friendsValue,
+          activeColor: Colors.orange,
+          inactiveColor: Colors.grey,
+          onChanged: (value) {
+            setSliderValue(value);
+          },
+        )
       ],
     );
   }

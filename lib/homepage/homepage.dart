@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
 import 'package:some_app/widgets/total_box.dart';
 import 'package:some_app/widgets/slider_box.dart';
 import 'package:some_app/widgets/tip_box.dart';
@@ -26,104 +27,128 @@ class _BillSplitState extends State<BillSplit> {
 
   //function for setting the value of Slider
   void setSliderValue(value) {
-    setState(() {
-      friendsValue = value;
-    });
+    setState(
+      () {
+        friendsValue = value;
+      },
+    );
   }
 
   //function for increasing the tip
   void tipIncrement() {
-    setState(() {
-      tip++;
-    });
+    setState(
+      () {
+        tip++;
+      },
+    );
   }
 
   //function for decreasing the tip
   void tipDecrement() {
-    setState(() {
-      tip--;
-    });
+    setState(
+      () {
+        tip--;
+      },
+    );
   }
 
   //function for setting tax value
   void setTaxValue(value) {
-    setState(() {
-      tax = value;
-    });
+    setState(
+      () {
+        tax = value;
+      },
+    );
   }
 
   //function for navigating to result page
-  void navigateToResultPage(BuildContext context, double friendsValue, String tax, double tip, String bill) {
-    Navigator.of(context).push(MaterialPageRoute(
-        builder: (context) =>
-            ResultPage(friends: friendsValue, tax: tax, tip: tip, bill: bill)));
+  void navigateToResultPage(BuildContext context, double friendsValue,
+      String tax, double tip, String bill) {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => ResultPage(
+          friends: friendsValue,
+          tax: tax,
+          tip: tip,
+          bill: bill,
+        ),
+      ),
+    );
   }
 
   //function for building buttons
   buildButton(String text) {
     return Expanded(
       child: OutlinedButton(
-          onPressed: () {
-            if (text == '-') {
-              setState(() {
+        onPressed: () {
+          if (text == '-') {
+            setState(
+              () {
                 bill = '';
-              });
-            } else {
-              setState(() {
+              },
+            );
+          } else {
+            setState(
+              () {
                 bill += text;
-              });
-            }
-          },
-          style: OutlinedButton.styleFrom(padding: const EdgeInsets.all(20)),
-          child: Text(text,
-              style: GoogleFonts.montserrat(
-                  fontSize: 25,
-                  color: Colors.black,
-                  fontWeight: FontWeight.w700))),
+              },
+            );
+          }
+        },
+        style: OutlinedButton.styleFrom(padding: const EdgeInsets.all(20)),
+        child: Text(
+          text,
+          style: GoogleFonts.montserrat(
+            fontSize: 25,
+            color: Colors.black,
+            fontWeight: FontWeight.w700,
+          ),
+        ),
+      ),
     );
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SingleChildScrollView(
-      child: Container(
-        margin: const EdgeInsets.only(left: 20, right: 20),
-        child: Column(
-          children: [
-            const SizedBox(
-              height: 20,
-            ),
-            TotalBox(
-              bill: bill,
-              friendsValue: friendsValue,
-              tax: tax,
-              tip: tip,
-            ),
-            const SizedBox(
-              height: 15,
-            ),
-            SliderBox(
-                friendsValue: friendsValue, setSliderValue: setSliderValue),
-            const SizedBox(
-              height: 10,
-            ),
-            Row(children: [
-              TipBox(
-                  tip: tip,
-                  tipIncrement: tipIncrement,
-                  tipDecrement: tipDecrement),
-              const SizedBox(width: 10),
-              TaxBox(tax: tax, setTaxValue: setTaxValue),
-            ]),
-            const SizedBox(
-              height: 10,
-            ),
-            KeyboardPad(buildButton: buildButton),
-            const SizedBox(
-              height: 10,
-            ),
-            TextButton(
+      body: SingleChildScrollView(
+        child: Container(
+          margin: const EdgeInsets.only(left: 20, right: 20),
+          child: Column(
+            children: [
+              const SizedBox(
+                height: 20,
+              ),
+              TotalBox(
+                bill: bill,
+                friendsValue: friendsValue,
+                tax: tax,
+                tip: tip,
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              SliderBox(
+                  friendsValue: friendsValue, setSliderValue: setSliderValue),
+              const SizedBox(
+                height: 10,
+              ),
+              Row(children: [
+                TipBox(
+                    tip: tip,
+                    tipIncrement: tipIncrement,
+                    tipDecrement: tipDecrement),
+                const SizedBox(width: 10),
+                TaxBox(tax: tax, setTaxValue: setTaxValue),
+              ]),
+              const SizedBox(
+                height: 10,
+              ),
+              KeyboardPad(buildButton: buildButton),
+              const SizedBox(
+                height: 10,
+              ),
+              TextButton(
                 style: TextButton.styleFrom(
                   backgroundColor: Colors.green,
                 ),
@@ -136,10 +161,12 @@ class _BillSplitState extends State<BillSplit> {
                           fontSize: 20,
                           color: Colors.white,
                           fontWeight: FontWeight.w700)),
-                ))
-          ],
+                ),
+              )
+            ],
+          ),
         ),
       ),
-    ));
+    );
   }
 }

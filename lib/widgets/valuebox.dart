@@ -34,25 +34,26 @@ class ValueBox extends StatelessWidget {
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height / 4,
       decoration: BoxDecoration(
-          borderRadius: const BorderRadius.only(
-              topLeft: Radius.circular(15),
-              topRight: Radius.circular(15),
-              bottomLeft: Radius.circular(15),
-              bottomRight: Radius.circular(15)),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.withOpacity(0.5),
-              spreadRadius: 5,
-              blurRadius: 7,
-              offset: const Offset(0, 3), // changes position of shadow
-            ),
+        borderRadius: const BorderRadius.only(
+            topLeft: Radius.circular(15),
+            topRight: Radius.circular(15),
+            bottomLeft: Radius.circular(15),
+            bottomRight: Radius.circular(15)),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.5),
+            spreadRadius: 5,
+            blurRadius: 7,
+            offset: const Offset(0, 3), // changes position of shadow
+          ),
+        ],
+        gradient: const LinearGradient(
+          colors: [
+            Colors.purple,
+            Colors.deepPurple,
           ],
-          gradient: const LinearGradient(
-            colors: [
-              Colors.purple,
-              Colors.deepPurple,
-            ],
-          )),
+        ),
+      ),
       child: Padding(
         padding: const EdgeInsets.all(15.0),
         child: Row(
@@ -98,6 +99,5 @@ class ValueBox extends StatelessWidget {
         ),
       ),
     );
-    
   }
 }

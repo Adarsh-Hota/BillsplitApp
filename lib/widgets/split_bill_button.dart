@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
 import 'package:some_app/resultpage/resultpage.dart';
 
 class SplitBillButton extends StatelessWidget {
@@ -23,22 +24,23 @@ class SplitBillButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
-        style: TextButton.styleFrom(
-          backgroundColor: Colors.green,
-        ),
-        onPressed: () {
-          Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => ResultPage(
-                      friends: friends, tax: tax, tip: tip, bill: bill)));
-        },
-        child: Center(
-          child: Text("Split Bill",
-              style: GoogleFonts.montserrat(
-                  fontSize: 20,
-                  color: Colors.white,
-                  fontWeight: FontWeight.w700)),
-        ));
+      style: TextButton.styleFrom(
+        backgroundColor: Colors.green,
+      ),
+      onPressed: () {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => ResultPage(
+                    friends: friends, tax: tax, tip: tip, bill: bill)));
+      },
+      child: Center(
+        child: Text("Split Bill",
+            style: GoogleFonts.montserrat(
+                fontSize: 20,
+                color: Colors.white,
+                fontWeight: FontWeight.w700)),
+      ),
+    );
   }
 }
