@@ -21,7 +21,7 @@ A flutter-based app that allows bill splitting. The app will divide the total su
 
 - Home Screen UI
 - Slider for specifying the number of friends
-- Tip textfield
+- Tip increment decrement counter
 - Tax textfield
 - Result Screen UI
 
